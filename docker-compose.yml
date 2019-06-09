@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  library:
+    image: 'php:7.3'
+    volumes:
+      - ./:/opt/
+    working_dir: '/opt'
+    command: ['php', '/opt/runme_new.php']

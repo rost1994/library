@@ -1,0 +1,31 @@
+Backend Developer Assessment
+
+A library is keeping a log of transactions. Each transaction is either a check-out (somebody taking a book) or a check-in (somebody returning a book).
+Books are identified by ISBN. People are identified by person_id. Each transaction has a timestamp.
+
+At some point, the library switched from using XML to using CSV format.
+
+The library would like to know the following statistical data:
+- Which person has the most checkouts (which person_id)?
+- Which book was checked out the longest time in total (summed up over all transactions)?
+- How many books are checked out at this moment?
+- Who currently has the largest number of books (which person_id)?
+
+Currently there is a badly written program which computes these data. It only supports XML input, so it only works on the old log data. Also, its output format is in a human readable format (plain text).
+
+The old program is invoked by running "php runme_old.php"
+
+Assignment:
+
+Change the implementation of the Reporter class so that:
+- It can read both the old (xml) and the new (csv) transaction log
+- It can output json format as well as plain text. It should use the extension of the output filename to determine the format.
+- It supports very large transaction logs (both xml and csv)
+- It can be run by running "php runme_new.php"
+
+Take into account:
+- The current implementation is an example. It is badly written and its error handling isn't very good. Feel free to rewrite or refactor.
+- The code should be made testable, readable and maintainable.
+
+You can assume that entries in the log are ordered by date (ascendingly) and that the input files don't have overlapping dates.
+
